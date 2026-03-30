@@ -1,3 +1,10 @@
 name: fraud_env
 version: "1.0"
 description: Fraud Detection Environment
+
+entrypoint: server.app:app
+
+tasks:
+  - name: easy
+  - name: medium
+  - name: hard
