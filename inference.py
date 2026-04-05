@@ -10,7 +10,7 @@ client = OpenAI(
     api_key=HF_TOKEN
 )
 
-def run_inference(prompt):
+def run(prompt="Hello"):
     print("START")
 
     response = client.chat.completions.create(
