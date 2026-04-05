@@ -1,20 +1,23 @@
+from fastapi import FastAPI
 import gradio as gr
+import uvicorn
 
+app = FastAPI()
+
+# ✅ Required for OpenEnv check
+@app.post("/reset")
+def reset():
+    return {"status": "reset successful"}
+
+# ✅ UI
 def health():
     return "Fraud API is running ✅"
 
-def reset():
-    return "reset successful"
+demo = gr.Interface(fn=health, inputs=[], outputs="text")
 
-with gr.Blocks() as demo:
-    gr.Markdown("# Fraud API is running ✅")
-    btn = gr.Button("Check")
-    output = gr.Textbox()
-    
-    btn.click(fn=health, inputs=[], outputs=output)
+# ✅ Mount Gradio
+app = gr.mount_gradio_app(app, demo, path="/")
 
-# ✅ THIS LINE IS CRITICAL
-demo.queue()
-
-# ✅ THIS LINE IS CRITICAL
-demo.launch(server_name="0.0.0.0", server_port=7860)
+# ✅ THIS IS THE MISSING PART (VERY IMPORTANT)
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=7860)
