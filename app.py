@@ -1,16 +1,8 @@
-from fastapi import FastAPI
+import gradio as gr
 
-app = FastAPI()
-
-@app.get("/")
-def root():
-    return {"message": "Fraud API is running ✅"}
-
-@app.get("/health")
 def health():
-    return {"status": "ok"}
+    return "Fraud API is running ✅"
 
-# ✅ REQUIRED FOR CHECK
-@app.post("/reset")
-def reset():
-    return {"status": "reset successful"}
+iface = gr.Interface(fn=health, inputs=[], outputs="text")
+
+iface.launch(server_name="0.0.0.0", server_port=7860)
