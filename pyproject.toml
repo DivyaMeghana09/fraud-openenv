@@ -6,4 +6,8 @@ requires-python = ">=3.10"
 
 dependencies = [
     "openai",
+    "openenv>=0.2.0"
 ]
+
+[project.scripts]
+server = "inference:run"
