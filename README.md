@@ -1,98 +1,47 @@
-# Fraud Detection OpenEnv
+# 🚀 Fraud Detection OpenEnv
 
-## Description
-This project simulates a fraud detection system where an AI agent decides whether a call is fraudulent.
-
-## Observation
-- duration
-- frequency
-
-## Action
-- 0 → Not Fraud
-- 1 → Fraud
-
-## Reward
-- Correct → 1.0
-- Wrong → 0.0
-
-## Tasks
-- Easy
-- Medium
-- Hard
-
-## Run
-
-```bash
-python inference.py
+## 📌 Overview
+This project implements a **Fraud Detection AI Environment** using OpenEnv standards, where an AI agent classifies whether a call is fraudulent or not based on given features.
 
 ---
 
-## 🟢 6. Folder Structure — ✅ GOOD
-
-✔ Correct  
-✔ Matches requirements  
-
----
-
-## 🔴 7. Hugging Face — ❌ NOT DONE YET
-
-👉 You still need to deploy  
-👉 Without this → ❌ disqualified  
+## 🧠 Problem Statement
+Detect fraudulent calls using AI by analyzing simple behavioral patterns like:
+- Call duration
+- Call frequency
 
 ---
 
-# 🏁 FINAL SCORE (IF SUBMITTED NOW)
+## ⚙️ Environment Design
 
-| Area | Status |
-|------|-------|
-| Logic | ✅ Strong |
-| Structure | ✅ Good |
-| YAML | ❌ Weak |
-| README | ❌ Missing |
-| Deployment | ❌ Missing |
-
-👉 Estimated: **6/10 (not enough to win yet)**
+### 🔍 Observation Space
+- `duration` → Length of call  
+- `frequency` → Number of calls  
 
 ---
 
-# 🚀 HOW TO MAKE IT 9/10 (WINNING LEVEL)
-
-Do these 3 things:
-
----
-
-## 🥇 1. Fix openenv.yaml  
-## 🥈 2. Add README  
-## 🥉 3. Deploy to Hugging Face  
+### 🎯 Action Space
+- `0` → Not Fraud  
+- `1` → Fraud  
 
 ---
 
-# 🎯 IMPORTANT FEEDBACK
-
-👉 Your project is:
-- simple ✅  
-- clean ✅  
-- understandable ✅  
-
-👉 That’s GOOD (judges like this)
+### 🏆 Reward Function
+- Correct prediction → **1.0**  
+- Wrong prediction → **0.0**
 
 ---
 
-# ⚡ NEXT STEP (DO NOW)
+## 🧪 Tasks
+The environment supports multiple difficulty levels:
 
-Tell me:
-
-👉 **“help me deploy HF”**
-
----
-
-I’ll guide you step-by-step to:
-
-🔥 Deploy on Hugging Face  
-🔥 Test endpoints  
-🔥 Submit successfully  
+- 🟢 Easy  
+- 🟡 Medium  
+- 🔴 Hard  
 
 ---
 
-You’re VERY close to a solid submission — just polish now 💪
-::contentReference[oaicite:0]{index=0}
+## 🤖 Inference
+The model uses an LLM via OpenAI-compatible API (LiteLLM proxy in evaluation).
+
+Structured outputs are generated using:
