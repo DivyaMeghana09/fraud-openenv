@@ -1,14 +1,14 @@
 # 🚀 Fraud Detection OpenEnv
 
 ## 📌 Overview
-This project implements a **Fraud Detection AI Environment** using OpenEnv standards, where an AI agent classifies whether a call is fraudulent or not based on given features.
+This project implements a **Fraud Detection AI Environment** using OpenEnv standards, where an AI agent classifies whether a call is fraudulent or not based on simple behavioral features.
 
 ---
 
 ## 🧠 Problem Statement
-Detect fraudulent calls using AI by analyzing simple behavioral patterns like:
-- Call duration
-- Call frequency
+Detect fraudulent calls using AI by analyzing patterns such as:
+- Call duration  
+- Call frequency  
 
 ---
 
@@ -33,15 +33,52 @@ Detect fraudulent calls using AI by analyzing simple behavioral patterns like:
 ---
 
 ## 🧪 Tasks
-The environment supports multiple difficulty levels:
 
-- 🟢 Easy  
-- 🟡 Medium  
-- 🔴 Hard  
+The environment includes multiple difficulty levels:
+
+- 🟢 **Easy** → Basic fraud patterns (low frequency, short duration)  
+- 🟡 **Medium** → Suspicious behavior (moderate anomalies)  
+- 🔴 **Hard** → Complex fraud patterns (high frequency + unusual duration)  
 
 ---
 
-## 🤖 Inference
-The model uses an LLM via OpenAI-compatible API (LiteLLM proxy in evaluation).
+## 🤖 AI Component
+This project uses an **LLM (Large Language Model)** via an OpenAI-compatible API (LiteLLM proxy during evaluation) to simulate intelligent decision-making in fraud detection scenarios.
 
-Structured outputs are generated using:
+---
+
+## 💡 Real-world Impact
+This system can help telecom companies and service providers:
+- Detect fraudulent call patterns  
+- Reduce financial losses  
+- Improve automated fraud monitoring systems  
+
+---
+
+This project follows a clean and modular structure for easy deployment and evaluation.
+
+---
+
+## 📁 Project Structure
+
+```
+fraud-openenv/
+├── server/
+│   └── app.py          # FastAPI + Gradio app (OpenEnv API)
+├── inference.py        # LLM inference script (Phase 2)
+├── app.py              # Hugging Face entry file
+├── openenv.yaml        # OpenEnv configuration
+├── Dockerfile          # Container setup
+├── requirements.txt    # Dependencies
+├── pyproject.toml      # Project configuration
+├── uv.lock             # Dependency lock file
+└── README.md           # Documentation
+```
+
+---
+
+## 🚀 How to Run
+
+```bash
+python inference.py
+```
